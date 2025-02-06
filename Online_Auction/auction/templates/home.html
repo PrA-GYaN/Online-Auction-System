@@ -1,0 +1,61 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    a:link, a:visited {
+      background-color: #f44336;
+      color: white;
+      padding: 14px 25px;
+      text-align: right;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    a:hover, a:active {
+      background-color: Blue;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;center&gt;&lt;h2&gt;Available Auction&lt;/h2&gt;&lt;/center&gt;
+&lt;a href=&quot;{% url 'login' %}&quot; target=&quot;_blank&quot;&gt;Login&lt;/a&gt;
+&lt;table&gt;
+  &lt;thread&gt;
+  &lt;tr&gt;
+    &lt;th&gt;SNo.&lt;/th&gt;
+    &lt;th&gt;Product Name&lt;/th&gt;
+    &lt;th&gt; Bid Amount &lt;/th&gt;
+    &lt;th&gt; Max Bid &lt;/th&gt;
+    &lt;th&gt;Results &lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thread&gt;
+{% for i in item %}
+  &lt;tr&gt;
+    &lt;td&gt;{{forloop.counter}}&lt;/td&gt;
+    &lt;td&gt;  {{i.item_name}}&lt;/td&gt;
+    &lt;td&gt;  {{i.basic_amount}}&lt;/td&gt;
+    &lt;td&gt;{{i.max_bid}}&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+
+    {% endfor %}
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;

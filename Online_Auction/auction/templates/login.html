@@ -1,0 +1,70 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Login Page&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+        }
+
+        input[type=&quot;text&quot;], input[type=&quot;password&quot;] {
+            width: 90%;
+            padding: 7px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;center&gt;&lt;h2&gt;LOGIN PAGE &lt;/h2&gt;&lt;/center&gt;
+        &lt;form method=&quot;post&quot;&gt;
+        {% csrf_token %}
+            &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;&lt;br&gt;
+            &lt;input type=&quot;text&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;&lt;br&gt;&lt;br&gt;
+
+            &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;&lt;br&gt;
+            &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required&gt;&lt;br&gt;&lt;br&gt;
+
+            &lt;center&gt;&lt;button type=&quot;submit&quot;&gt;Login&lt;/button&gt;&lt;/center&gt;
+        &lt;/form&gt;
+        &lt;p&gt;Don't have an account? &lt;a href=&quot;{% url 'register'%}&quot;&gt;Register here&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;

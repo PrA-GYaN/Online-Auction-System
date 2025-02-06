@@ -1,0 +1,88 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Auction Item Form&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 100px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container label,
+        .form-container input,
+        .form-container textarea {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-container input[type=&quot;submit&quot;] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;form-container&quot;&gt;
+        &lt;h2&gt;Auction Participation Form &lt;/h2&gt;
+        &lt;form method=&quot;POST&quot;&gt;
+        {% csrf_token %}
+            &lt;div&gt;
+                &lt;label for=&quot;item_name&quot;&gt;Item Name:&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;item_name&quot; name=&quot;item_name&quot; placeholder=&quot;{{item.item_name}}&quot; readonly&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for=&quot;description&quot;&gt;Description:&lt;/label&gt;
+                &lt;textarea id=&quot;description&quot; name=&quot;description&quot; rows=&quot;3&quot; placeholder=&quot;{{item.desc}}&quot; readonly&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for=&quot;basic_amount&quot;&gt;Basic Amount:&lt;/label&gt;
+                &lt;input type=&quot;number&quot; id=&quot;basic_amount&quot; name=&quot;basic_amount&quot; placeholder=&quot;{{item.basic_amount}}&quot; readonly&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for=&quot;start_date&quot;&gt;Start Date:&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;start_date&quot; name=&quot;start_date&quot; placeholder=&quot;{{item.start_date}}&quot; readonly&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for=&quot;end_date&quot;&gt;End Date:&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;end_date&quot; name=&quot;end_date&quot; placeholder=&quot;{{item.end_date}}&quot; readonly&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for=&quot;max_bid&quot;&gt;Max Bid:&lt;/label&gt;
+                &lt;input type=&quot;number&quot; id=&quot;max_bid&quot; name=&quot;max_bid&quot; min=&quot;{{item.basic_amount}}&quot; required&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;

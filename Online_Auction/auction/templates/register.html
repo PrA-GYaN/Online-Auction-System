@@ -1,0 +1,70 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;User Registration&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type=&quot;text&quot;],
+        input[type=&quot;email&quot;],
+        input[type=&quot;tel&quot;],
+        input[type=&quot;password&quot;] {
+            width: 100%;
+            padding: 7px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type=&quot;submit&quot;] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;center&gt;&lt;h2&gt;User Registration&lt;/h2&gt;&lt;/center&gt;
+        &lt;form action=&quot;&quot; method=&quot;POST&quot;&gt;
+        {% csrf_token %}
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;
+                &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;
+                &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;phone&quot;&gt;Phone:&lt;/label&gt;
+                &lt;input type=&quot;tel&quot; id=&quot;phone&quot; name=&quot;phone&quot; required&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;
+                &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; required&gt;
+            &lt;/div&gt;
+            &lt;center&gt;&lt;input type=&quot;submit&quot; value=&quot;Register&quot;&gt;&lt;/center&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
